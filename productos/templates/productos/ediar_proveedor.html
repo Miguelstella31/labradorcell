@@ -1,0 +1,6 @@
+<h1>Editar Proveedor</h1>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Guardar Cambios</button>
+</form>
+<a href="{% url 'lista_proveedores' %}">Volver a la lista de proveedores</a>

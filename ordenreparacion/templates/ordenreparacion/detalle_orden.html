@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Detalles de la Orden de Reparación</h1>
+    <p><strong>IMEI:</strong> {{ orden.imei }}</p>
+    <p><strong>Marca:</strong> {{ orden.marca }}</p>
+    <p><strong>Modelo:</strong> {{ orden.modelo }}</p>
+    <p><strong>Falla Reportada:</strong> {{ orden.falla_reportada }}</p>
+    <p><strong>Pruebas Básicas:</strong></p>
+    <ul>
+      <li>Carga: {{ orden.prueba_carga }}</li>
+      <li>Cámara: {{ orden.prueba_camara }}</li>
+      <li>Micrófono: {{ orden.prueba_microfono }}</li>
+    </ul>
+    <p><strong>Costo Total:</strong> {{ orden.costo_reparacion }}</p>
+    <p><strong>Abono:</strong> {{ orden.abono }}</p>
+    <p><strong>Saldo Pendiente:</strong> {{ orden.saldo_pendiente }}</p>
+    <a href="{% url 'lista_ordenes' %}">Volver a la lista de órdenes</a>
+  </body>
+</html>

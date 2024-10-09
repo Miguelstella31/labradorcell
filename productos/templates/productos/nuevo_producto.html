@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Producto</title>
+</head>
+<body>
+    <h1>Añadir Nuevo Producto</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}  <!-- Para mostrar errores de validación generales -->
+
+        {% for field in form %}
+            <div>
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}  <!-- Muestra el campo del formulario -->
+                {{ field.errors }}  <!-- Muestra errores específicos de este campo -->
+            </div>
+        {% endfor %}
+
+        <button type="submit">Guardar Producto</button>
+    </form>
+
+    <a href="{% url 'lista_productos' %}">Volver a la lista de productos</a>
+</body>
+</html>

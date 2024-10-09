@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Órdenes de Reparación</h1>
+    <a href="{% url 'crear_orden' %}">Crear Nueva Orden</a>
+    <table>
+      <thead>
+        <tr>
+          <th>IMEI</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Costo</th>
+          <th>Abono</th>
+          <th>Saldo Pendiente</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for orden in ordenes %}
+        <tr>
+          <td>{{ orden.imei }}</td>
+          <td>{{ orden.marca }}</td>
+          <td>{{ orden.modelo }}</td>
+          <td>{{ orden.costo_reparacion }}</td>
+          <td>{{ orden.abono }}</td>
+          <td>{{ orden.saldo_pendiente }}</td>
+          <td>
+            <a href="{% url 'detalle_orden' orden.pk %}">Ver</a> |
+            <a href="{% url 'editar_orden' orden.pk %}">Editar</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
