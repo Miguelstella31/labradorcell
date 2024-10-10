@@ -29,10 +29,13 @@ from django.urls import include, path  # Asegúrate de importar 'include'
 from . import views  # Asegúrate de que el archivo views.py exista
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('clientes.urls')),  # Incluir las URLs de clientes
-    path('', include('ventas.urls')),  # Incluir las URLs de ventas
-    path('', include('productos.urls')),  # Incluir las URLs de productos
-    path('', include('ordenreparacion.urls')),  # Incluir las URLs de orden de servicio  # Incluir las URLs de configuración del negocio
-    path('', include('inventario.urls')),
+    path('admin/', admin.site.urls),  # Ruta para el panel de administración
+
+    # Prefijos únicos para cada aplicación
+    path('clientes/', include('clientes.urls')),  # URLs de la aplicación clientes
+    path('ventas/', include('ventas.urls')),  # URLs de la aplicación ventas
+    path('productos/', include('productos.urls')),  # URLs de la aplicación productos
+    path('ordenes/', include('ordenreparacion.urls')),  # URLs de la aplicación de órdenes de reparación
+    path('inventario/', include('inventario.urls')),  # URLs de la aplicación inventario
+    path('', include('configuracion_negocio.urls')),  # Página principal con la configuración del negocio
 ]

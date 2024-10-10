@@ -1,0 +1,37 @@
+<!-- base.html -->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Título{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'inicio' %}">Inicio</a></li>
+          <li>
+            <a href="{% url 'configuracion_negocio' %}"
+              >Configuración de negocio</a
+            >
+          </li>
+          <li><a href="{% url 'lista_empleados' %}">Empleados</a></li>
+          <li><a href="{% url 'ventas' %}">Ventas</a></li>
+          <li><a href="{% url 'clientes' %}">Clientes</a></li>
+          <li><a href="{% url 'productos' %}">Productos</a></li>
+          <li><a href="{% url 'inventario' %}">Inventario</a></li>
+          <li>
+            <a href="{% url 'ordenes_reparacion' %}">Órdenes de reparación</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>{% block content %} {% endblock %}</main>
+    <footer>
+      <p>&copy; 2024 Labrador Cell</p>
+    </footer>
+  </body>
+</html>

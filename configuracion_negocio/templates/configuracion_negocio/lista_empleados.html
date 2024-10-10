@@ -1,22 +1,37 @@
-<h1>Lista de Empleados</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Rol</th>
-      <th>Teléfono</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for empleado in empleados %}
-    <tr>
-      <td>{{ empleado.nombre }}</td>
-      <td>{{ empleado.rol }}</td>
-      <td>{{ empleado.telefono }}</td>
-      <td>{{ empleado.email }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-<a href="{% url 'nuevo_empleado' %}">Agregar Nuevo Empleado</a>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Empleados</title>
+  </head>
+  <body>
+    {% extends 'configuracion_negocio/base.html' %} {% block title %}Lista de
+    Empleados{% endblock %} {% block content %}
+    <h1>Lista de Empleados</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Rol</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for empleado in empleados %}
+        <tr>
+          <td>{{ empleado.nombre }}</td>
+          <td>{{ empleado.rol }}</td>
+          <td>{{ empleado.telefono }}</td>
+          <td>{{ empleado.email }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="{% url 'nuevo_empleado' %}">Agregar Nuevo Empleado</a>
+    {% endblock %}
+  </body>
+</html>

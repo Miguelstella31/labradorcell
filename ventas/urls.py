@@ -7,4 +7,5 @@ urlpatterns = [
     path('crear/', views.crear_venta, name='crear_venta'),
     path('editar/<int:venta_id>/', views.editar_venta, name='editar_venta'),
     path('eliminar/<int:venta_id>/', views.eliminar_venta, name='eliminar_venta'),
+    path('ventas/', views.listar_ventas, name='ventas'),  # Nueva ruta para acceder a listar ventas
 ]

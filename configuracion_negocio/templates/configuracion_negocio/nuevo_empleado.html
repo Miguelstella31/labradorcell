@@ -3,19 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Agregar Nuevo Empleado</title>
   </head>
   <body>
+    {% extends 'configuracion_negocio/base.html' %} {% block title %}Agregar
+    Nuevo Empleado{% endblock %} {% block content %}
     <h1>Agregar Nuevo Empleado</h1>
     <form method="post">
       {% csrf_token %} {{ form.as_p }}
       <button type="submit">Guardar Empleado</button>
     </form>
+    {% endblock %}
   </body>
 </html>
-
-<h1>Agregar Nuevo Empleado</h1>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Guardar Empleado</button>
-</form>
