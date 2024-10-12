@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Crear Orden</title>
+  </head>
+  <body>
+    <h1>Crear Orden</h1>
+    <form method="post">
+      {% csrf_token %}
+
+      <label for="{{ form.cliente.id_for_label }}">Cliente:</label>
+      {{ form.cliente }}<br />
+
+      <label for="{{ form.imei.id_for_label }}">IMEI:</label>
+      {{ form.imei }}<br />
+
+      <label for="{{ form.modelo.id_for_label }}">Modelo:</label>
+      {{ form.modelo }}<br />
+
+      <label for="{{ form.marca.id_for_label }}">Marca:</label>
+      {{ form.marca }}<br />
+
+      <label for="{{ form.falla_reportada.id_for_label }}"
+        >Falla Reportada:</label
+      >
+      {{ form.falla_reportada }}<br />
+
+      <label for="{{ form.prueba_carga.id_for_label }}">Prueba de Carga:</label>
+      {{ form.prueba_carga }}<br />
+
+      <label for="{{ form.prueba_camara.id_for_label }}"
+        >Prueba de Cámara:</label
+      >
+      {{ form.prueba_camara }}<br />
+
+      <label for="{{ form.prueba_microfono.id_for_label }}"
+        >Prueba de Micrófono:</label
+      >
+      {{ form.prueba_microfono }}<br />
+
+      <label for="{{ form.costo_reparacion.id_for_label }}"
+        >Costo de Reparación:</label
+      >
+      {{ form.costo_reparacion }}<br />
+
+      <label for="{{ form.abono.id_for_label }}">Abono:</label>
+      {{ form.abono }}<br />
+
+      <input type="submit" value="Crear" />
+    </form>
+  </body>
+</html>

@@ -1,8 +1,6 @@
-from django.shortcuts import render,redirect
-from .models import Cliente
-from .forms import ClienteForm  # Asegúrate de tener un formulario para manejar los clientes
-
-
+from django.shortcuts import render, redirect
+from .models import Cliente  # Asegúrate de importar correctamente
+from .forms import ClienteForm
 
 def lista_clientes(request):
     clientes = Cliente.objects.all()
@@ -13,7 +11,7 @@ def crear_cliente(request):
         form = ClienteForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('lista_clientes')  # Redirige a la lista de clientes
+            return redirect('lista_clientes')  # Redirige a la lista de clientes después de guardar
     else:
         form = ClienteForm()
     return render(request, 'clientes/cliente_nuevo.html', {'form': form})
